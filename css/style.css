@@ -1569,5 +1569,59 @@ body > div.pp.portfolio-popup.open > div.pp-details.active > div > div.pp-title 
 .section {
     background-color: transparent !important;
 }
+/* Make Project Title and Category white */
+.pp-details h2, 
+.pp-details h3, 
+.pp-details p,
+.pp-details .category {
+    color: #ffffff !important;
+}
 
+/* Optional: Make the "Project Brief" and "Project Info" labels white too */
+.pp-main-details h3 {
+    color: #ffffff;
+}
+.contact-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Deeper shadow when hovering */
+    transform: translateY(-5px); /* Lift the card slightly */
+    transition: all 0.3s ease;
+}
+/* Custom Scrollbar for Chrome/Edge/Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111; 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--skin-color); /* Matches your blue theme color */
+    border-radius: 10px;
+}
+/* This hides the cards and moves them down 50px initially */
+/* This is triggered by your JavaScript when you scroll to the section */
+.contact-item.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 1. Define the floating movement */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Moves up 15px */
+    100% { transform: translateY(0px); } /* Moves back down */
+}
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 2. Target the INNER div instead of the card */
+.contact-item.contact-card .contact-item-inner {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 3. Stagger them using the card index */
+.contact-item:nth-child(1) .contact-item-inner { animation-delay: 0s; }
+.contact-item:nth-child(2) .contact-item-inner { animation-delay: 0.5s; }
+.contact-item:nth-child(3) .contact-item-inner { animation-delay: 1s; }
 /***** End contact section *****/

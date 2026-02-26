@@ -405,3 +405,8 @@ function animateParticles() {
 window.addEventListener('resize', initParticles);
 initParticles();
 animateParticles();
+function copyEmail() {
+    const email = "bharathtommandru1@gmail.com";
+    navigator.clipboard.writeText(email);
+    alert("Email copied to clipboard, bro!");
+}
