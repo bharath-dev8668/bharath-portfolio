@@ -1489,8 +1489,8 @@ body > div.pp.portfolio-popup.open > div.pp-details.active > div > div.pp-title 
 }
 .scroll-container-3d {
     perspective: 1000px; /* This creates the 3D space */
-    padding: 100px 20px;
-    min-height: 100vh;
+    padding: 20px 20px 50px 20px;
+    min-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
